@@ -8,13 +8,20 @@ public class Shell : MonoBehaviour {
     public float explosionRadius;//爆炸的半径
     public GameObject explosionEffect;
     public float explosionTimeUp;
+
+    private LayerMask lm;
+
+    public void Init(LayerMask enemyLayer)
+    {
+        lm = enemyLayer;
+    }
    void OnCollisionEnter()
     {
         GameObject obj = Instantiate(explosionEffect, transform.position, transform.rotation)as GameObject;
         Destroy (gameObject);
         Destroy(obj, explosionTimeUp);
 
-        Collider[] cols = Physics.OverlapSphere(transform.position,explosionRadius);
+        Collider[] cols = Physics.OverlapSphere(transform.position,explosionRadius,lm);
         for (int i = 0;i< cols.Length;i++)
         {
             Rigidbody r = cols[i].GetComponent<Rigidbody>();

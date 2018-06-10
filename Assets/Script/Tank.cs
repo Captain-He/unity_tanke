@@ -8,7 +8,9 @@ public class Tank : Unit {
     private TankWeapon tw;
     void Start()
     {
+        base.Start();
         tw = GetComponent<TankWeapon>();
+        tw.Init(team);
     }
 
     // Update is called once per frame
@@ -17,7 +19,6 @@ public class Tank : Unit {
         float vertical = Input.GetAxis("Vertical1");
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime * vertical);
         transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime * horizontal);
-
         // Update is called once per frame
             if (Input.GetKeyDown(KeyCode.Space))
             {

@@ -2,20 +2,58 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Team {
+Red,Blue,Green
+}
 public class Unit : MonoBehaviour {
-
     public int health = 100;
+    private int curHealth = 100;
+    public Team team;
     public GameObject deadEffect;//死亡后的效果
+
+    public int GetCurHealth()
+    {
+        return curHealth;
+    }
+    public void Start()
+    {
+        curHealth = health;
+    }
     public void ApliyyDamage(int damage) { //应用伤害
-        if (health > damage)
+        if (curHealth > damage)
         {
-            health -= damage;
+            curHealth -= damage;
         }
         else {
-            Destruct();
+            if (this.gameObject.name == "redhome")
+            {
+                Destruct();
+                GameManager.instance.Failed();
+                return;
+            }
+                
+            if (this.gameObject.name == "greenhome")
+            {
+                Destruct();
+                GameManager.instance.Failed();
+                return;
+            }
+
+            if (this.gameObject.name == "Tank")
+            {
+                Destruct();
+                GameManager.instance.Failed();
+                return;
+            }
+            else
+            {
+                Destruct();
+            }
+
         }
 
     }
+
     public void Destruct() {
         if (deadEffect != null)
         {

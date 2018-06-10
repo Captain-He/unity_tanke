@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>4</LangVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -10,11 +11,11 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{4FC168A0-091B-EB0A-ED1D-94C841095B6F}</ProjectGuid>
+    <ProjectGuid>{B66AA2ED-A227-1312-C652-15CFCDA8F456}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
   </PropertyGroup>
@@ -28,6 +29,7 @@
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,6 +39,7 @@
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <NoConfig>true</NoConfig>
@@ -59,6 +62,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Complete-Game\Scripts\Done_BGScroller.cs" />
+    <Compile Include="Assets\_Complete-Game\Scripts\Done_DestroyByBoundary.cs" />
+    <Compile Include="Assets\_Complete-Game\Scripts\Done_DestroyByContact.cs" />
+    <Compile Include="Assets\_Complete-Game\Scripts\Done_DestroyByTime.cs" />
+    <Compile Include="Assets\_Complete-Game\Scripts\Done_EvasiveManeuver.cs" />
+    <Compile Include="Assets\_Complete-Game\Scripts\Done_GameController.cs" />
+    <Compile Include="Assets\_Complete-Game\Scripts\Done_Mover.cs" />
+    <Compile Include="Assets\_Complete-Game\Scripts\Done_PlayerController.cs" />
+    <Compile Include="Assets\_Complete-Game\Scripts\Done_RandomRotator.cs" />
+    <Compile Include="Assets\_Complete-Game\Scripts\Done_WeaponController.cs" />
+    <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -105,9 +119,12 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\Script\AITank.cs" />
     <Compile Include="Assets\Script\Camera\TankCamera.cs" />
+    <Compile Include="Assets\Script\HUDUserInerface.cs" />
+    <Compile Include="Assets\Script\LayerManager.cs" />
     <Compile Include="Assets\Script\Shell.cs" />
     <Compile Include="Assets\Script\Tank.cs" />
     <Compile Include="Assets\Script\TankWeapon.cs" />
+    <Compile Include="Assets\Script\Tools\ISMath.cs" />
     <Compile Include="Assets\Script\Unit.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
@@ -135,6 +152,7 @@
     <None Include="Assets\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
     <None Include="Assets\Fonts\Bowlby_One\OFL.txt" />
     <None Include="Assets\PostProcessing\Editor Resources\UI\Trackball.shader" />
+    <None Include="Assets\SpaceShip\spaceship.txt" />
     <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.cginc" />
     <None Include="Assets\PostProcessing\Resources\Shaders\TAA.shader" />
     <None Include="Assets\PostProcessing\Resources\Shaders\EyeHistogram.compute" />
@@ -152,10 +170,10 @@
     <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformCompute.compute" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/hezhichao/Desktop/unity/tanke1/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/hezhichao/Desktop/新建文件夹/tanke1——6.9/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/hezhichao/Desktop/unity/tanke1/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/hezhichao/Desktop/新建文件夹/tanke1——6.9/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
